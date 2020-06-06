@@ -26,24 +26,39 @@
       "smell": "biszkopty, cytrusy",
       "comment": "mniam c:",
       "id": 3
-    }
-  ],
-  "countries": [
-    {
-      "name": "Chiny",
-      "id": 1
     },
     {
-      "name": "Japonia",
-      "id": 2
-    },
-    {
-      "name": "Indie",
-      "id": 3
-    },
-    {
-      "name": "Inny",
+      "name": "mmm",
+      "country": "China",
+      "info": "",
+      "brewing": "",
+      "smell": "",
+      "taste": "",
+      "aroma": "",
+      "comment": "",
       "id": 4
+    },
+    {
+      "name": "",
+      "country": "Sri Lanka",
+      "info": "",
+      "brewing": "",
+      "smell": "",
+      "taste": "",
+      "aroma": "",
+      "comment": "",
+      "id": 5
+    },
+    {
+      "name": "haha",
+      "country": "Taiwan",
+      "info": "",
+      "brewing": "",
+      "smell": "",
+      "taste": "",
+      "aroma": "",
+      "comment": "",
+      "id": 6
     }
   ]
 }

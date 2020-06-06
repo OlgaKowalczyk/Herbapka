@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { TEA_ROUTE, COUNTRY_ROUTE } from './apiConstants';
+import { TEA_ROUTE } from './apiConstants';
+import { Link } from 'react-router-dom';
 
-//przesłać id w propsach albo routerem? i wrzucić do tea-route
 class Tea extends Component {
 
     state = {
@@ -14,18 +14,14 @@ class Tea extends Component {
         aroma: '',
         comment: '',
         // date: '',
+        // id: this.props.match.params.id,
     }
+
     componentDidMount(){
-        fetch(`${TEA_ROUTE}/1`, {
-            method: "GET",
-            body: JSON.stringify(),
-            headers: {
-                "Content-Type": "application/json"
-            }
-            })
+        fetch(`${TEA_ROUTE}/3`)
             .then(response => response.json())
             .then(data => {
-                console.log('data: ', data);
+                console.log('Tea-data: ', data);
                 this.setState({
                     name: data.name,
                     country: data.country,
@@ -38,7 +34,7 @@ class Tea extends Component {
                 })
             })
             .catch(error => {
-                console.log('error', error);
+                console.log('Tea-error', error);
             });
         }
 
@@ -48,22 +44,31 @@ class Tea extends Component {
 
         return(
             <div>
-                <table>
-                    <thead>
-                        <tr> {name}</tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            Kraj pochodzenia: {country}
-                        </tr>
-                        <tr>
-
-                        </tr>
-                      
-
-                    </tbody>
-                </table>
-            </div>
+                <div>
+                {name}
+                </div>
+                <div>
+                    Kraj pochodzenia: {country}
+                </div>
+                <div>
+                    Dodatkowe informacje: {info}
+                </div>
+                <div>
+                    Sposób parzenia: {brewing}
+                </div>
+                <div>
+                    Wrażenia zapachowe: {smell}<br/>
+                    Wrażenia smakowe: {taste}<br/>
+                    Aromat: {aroma}<br/>
+                </div>
+                <div>
+                    {comment}
+                </div>
+                <div>FOTO</div>
+                <Link to='/teaList'>
+                    <button>Wróć do listy</button>
+                </Link>
+            </div>    
         )
     }
 }

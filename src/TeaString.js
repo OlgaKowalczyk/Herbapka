@@ -1,13 +1,12 @@
 import React from 'react';
 import { TEA_ROUTE }  from './apiConstants';
-import EditTeaForm from './EditTeaForm';
 import { Link } from 'react-router-dom';
 
 
 const TeaString = ({name, country, date, id}) => {
 
+    console.log('TeaString-id:', id)
     const handleDelete = (e) => {
-
         if (window.confirm('Na pewno chcesz usunąć ten wpis?')){
             fetch(`${TEA_ROUTE}/${id}`, {
             method: "DELETE"
@@ -25,10 +24,12 @@ const TeaString = ({name, country, date, id}) => {
 
     return(
         <div>
-            <p>{name} -- {country} -- {date}</p>
-            {/* <Link to='/editTea' component={EditTeaForm}>
+            <Link to={`/tea/${id}`}>
+                <p>{name} -- {country} -- {date}</p>
+            </Link>
+            <Link to={`/editTea/${id}`}>
                 <button>Edytuj</button>
-            </Link>    */}
+            </Link>   
             <button onClick={handleDelete}> Usuń </button> 
         </div>
     )

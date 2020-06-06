@@ -4,10 +4,10 @@ import DatePicker from 'datepicker';
 
 const Date = () => {
     
-    const [startDate, setStartDate] = useState(new Date());
+    const [date, setDate] = useState(new Date());
     
     return (
-      <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+      <DatePicker selected={Date} onChange={date => setDate(date)} />
     );
   };
 

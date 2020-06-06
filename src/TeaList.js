@@ -10,16 +10,15 @@ const TeaList = () => {
     // !! co wrzucić w [] w useEffect?
 
     useEffect(() => {
-
         fetch(TEA_ROUTE)
             .then(response => response.json())
             .then(data => {
-                console.log('data:', data);
+                console.log('TeaList-data:', data);
                 setTeaList(prevTeaList => data);
                 console.log('teaList:', teaList)
             })
             .catch(error => {
-                console.log('myError:', error);
+                console.log('TeaList-error:', error);
             });
 
     }, [zmianaWTeaList]);

@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom';
 import {
   HashRouter,
   Route,
-  Link,
-  Switch,
-  NavLink,
+  Switch
 } from 'react-router-dom';
 
 import Navigation from './Navigation';
@@ -15,33 +13,27 @@ import TeaForm from './TeaForm';
 import EditTeaForm from './EditTeaForm';
 import LearnAboutTea from './LearnAboutTea';
 import Tea from './Tea';
-import TeaString from './TeaString';
+import Hello from './Hello';
 
 const App = () => {
   
-
   return(
-    <>
-      <Navigation />
-      <TeaForm />
-      <TeaList />
-      <EditTeaForm />
-      <Tea />
-      {/* <HashRouter>
+      <HashRouter>
         <>
         <Navigation />
-        <TeaList />
         <Switch>
-            <Route exact path='/' component={App} />
+            <Route exact path='/' component={Hello} />
             <Route path='/teaList' component={TeaList} />
             <Route path='/addNewTea' component={TeaForm} />
             <Route path='/editTea/:id' component={EditTeaForm} />          
             <Route path='/learn' component={LearnAboutTea} />
-            <Route path='/tea/:id' component={Tea} /> 
+            <Route path='/tea/:id' component={Tea} />  
         </Switch>
         </>
-     </HashRouter> */}
-    </> 
+     </HashRouter>
   )
 }
 export default App;
+
+
+{/* <Route path='/editTea/:id' component={TeaList} />   */}
