@@ -1,0 +1,49 @@
+{
+  "teas": [
+    {
+      "name": "Tie Guan Yin",
+      "country": "Chiny",
+      "taste": "tran :<",
+      "aroma": "smuteczek",
+      "comment": "fujka :<",
+      "id": 1
+    },
+    {
+      "name": "Da Hong Pao",
+      "country": "Chiny",
+      "info": "zbiór 2018",
+      "brewing": "9g/200ml I 3s, II 3s, III 5s, IV 10s",
+      "taste": "lukrecja, cytrusy",
+      "aroma": "kamienie",
+      "comment": "spoczko",
+      "id": 2
+    },
+    {
+      "name": "Nilgiri Kairbetta",
+      "country": "Nepal",
+      "info": "zbiór luty 2020r., 2000m n.p.m.",
+      "brewing": "90* 10g/400ml I 2min II 4min",
+      "smell": "biszkopty, cytrusy",
+      "comment": "mniam c:",
+      "id": 3
+    }
+  ],
+  "countries": [
+    {
+      "name": "Chiny",
+      "id": 1
+    },
+    {
+      "name": "Japonia",
+      "id": 2
+    },
+    {
+      "name": "Indie",
+      "id": 3
+    },
+    {
+      "name": "Inny",
+      "id": 4
+    }
+  ]
+}
