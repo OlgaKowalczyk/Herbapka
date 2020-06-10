@@ -1,12 +1,14 @@
 {
   "teas": [
     {
-      "name": "Tie Guan Yin",
+      "name": "Tie Guan Yin 2019",
       "country": "Chiny",
       "taste": "tran :<",
       "aroma": "smuteczek",
       "comment": "fujka :<",
-      "id": 1
+      "type": "oolong",
+      "id": 1,
+      "date": "2020-06-10"
     },
     {
       "name": "Da Hong Pao",
@@ -14,51 +16,33 @@
       "info": "zbiór 2018",
       "brewing": "9g/200ml I 3s, II 3s, III 5s, IV 10s",
       "taste": "lukrecja, cytrusy",
-      "aroma": "kamienie",
+      "type": "oolong",
       "comment": "spoczko",
-      "id": 2
+      "id": 2,
+      "date": "2020-06-03"
     },
     {
-      "name": "Nilgiri Kairbetta",
+      "name": "Nilgiri Kairbetta ",
       "country": "Nepal",
       "info": "zbiór luty 2020r., 2000m n.p.m.",
       "brewing": "90* 10g/400ml I 2min II 4min",
       "smell": "biszkopty, cytrusy",
       "comment": "mniam c:",
-      "id": 3
+      "type": "inny",
+      "id": 3,
+      "date": "2020-06-20"
     },
     {
-      "name": "mmm",
-      "country": "China",
-      "info": "",
+      "name": "Bi Luo Chun",
+      "country": "Chiny",
+      "info": "pyszne bo świeże",
       "brewing": "",
       "smell": "",
       "taste": "",
       "aroma": "",
       "comment": "",
-      "id": 4
-    },
-    {
-      "name": "",
-      "country": "Sri Lanka",
-      "info": "",
-      "brewing": "",
-      "smell": "",
-      "taste": "",
-      "aroma": "",
-      "comment": "",
-      "id": 5
-    },
-    {
-      "name": "haha",
-      "country": "Taiwan",
-      "info": "",
-      "brewing": "",
-      "smell": "",
-      "taste": "",
-      "aroma": "",
-      "comment": "",
-      "id": 6
+      "id": 5,
+      "date": "2020-06-18"
     }
   ]
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import ReactDOM from 'react-dom';
 import {
   HashRouter,
   Route,
@@ -35,5 +34,3 @@ const App = () => {
 }
 export default App;
 
-
-{/* <Route path='/editTea/:id' component={TeaList} />   */}

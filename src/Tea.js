@@ -11,14 +11,16 @@ class Tea extends Component {
         brewing: '',
         smell: '',
         taste: '',
-        aroma: '',
+        type: '',
         comment: '',
         // date: '',
-        // id: this.props.match.params.id,
     }
 
     componentDidMount(){
-        fetch(`${TEA_ROUTE}/3`)
+        
+        const id = this.props.match.params.id;
+
+        fetch(`${TEA_ROUTE}/${id}`)
             .then(response => response.json())
             .then(data => {
                 console.log('Tea-data: ', data);
@@ -40,10 +42,10 @@ class Tea extends Component {
 
     render(){
         
-        const {name, country, info, brewing, smell, taste, aroma, comment} = this.state;
+        const {name, country, info, brewing, smell, taste, type, comment} = this.state;
 
         return(
-            <div>
+            <div className='container'>
                 <div>
                 {name}
                 </div>
@@ -59,7 +61,7 @@ class Tea extends Component {
                 <div>
                     Wrażenia zapachowe: {smell}<br/>
                     Wrażenia smakowe: {taste}<br/>
-                    Aromat: {aroma}<br/>
+                    Typ: {type}<br/>
                 </div>
                 <div>
                     {comment}

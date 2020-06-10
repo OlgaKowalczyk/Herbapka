@@ -3,31 +3,26 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
     
-    const navStyle = {
-      display: 'flex',
-      justifyContent: 'space-around',
-      alignIems: 'center',
-      minHeight: '10vh',
-      listStyle: 'none',
-    }
+ 
     const activeStyle = {
-        fontWeight: 600
+        fontWeight: 600,
+        textDecoration: 'none'
     }
     
       return (
-          <nav>
+          <nav className='nav'>
               <NavLink to='/' activeStyle={activeStyle}> 
                   <h3>logo</h3>
               </NavLink>
-              <ul style={navStyle}>
+              <ul className='nav_li'>
                   <NavLink to='/teaList' activeStyle={activeStyle}> 
-                      <li>Twój dziennik herbaciany</li>
+                      <li className='nav_li'>Twój dziennik herbaciany</li>
                   </NavLink>
                   <NavLink to='/addNewTea' activeStyle={activeStyle}> 
-                      <li>Dodaj herbatę</li>
+                      <li className='nav_li'>Dodaj herbatę</li>
                   </NavLink>  
                   <NavLink to='/learn' activeStyle={activeStyle}>
-                      <li>Dowiedz się więcej</li>
+                      <li className='nav_li'>Dowiedz się więcej</li>
                   </NavLink>
               </ul>
           </nav>

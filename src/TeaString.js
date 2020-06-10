@@ -20,17 +20,26 @@ const TeaString = ({name, country, date, id}) => {
         } else {
             return null;
         }
+        // fetch(TEA_ROUTE)
+        // .then(response => response.json())
+        // .then(data => {
+        //     console.log('TeaString-newList:', data)
+        //     actualize(data);
+        // })
+        // .catch(error => {
+        //     console.log('TeaString-newList-error:', error);
+        // });
     }
 
     return(
-        <div>
+        <div className='teaString'>
             <Link to={`/tea/${id}`}>
                 <p>{name} -- {country} -- {date}</p>
             </Link>
             <Link to={`/editTea/${id}`}>
-                <button>Edytuj</button>
+                <button className='teaString_btn'>Edytuj</button>
             </Link>   
-            <button onClick={handleDelete}> Usuń </button> 
+            <button className='teaString_btn' onClick={handleDelete}> Usuń </button> 
         </div>
     )
 }
