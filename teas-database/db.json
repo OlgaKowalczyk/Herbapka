@@ -8,10 +8,10 @@
       "comment": "fujka :<",
       "type": "oolong",
       "id": 1,
-      "date": "2020-06-10"
+      "date": "2020-06-01"
     },
     {
-      "name": "Da Hong Pao",
+      "name": "Da Hong Pao ",
       "country": "Chiny",
       "info": "zbiór 2018",
       "brewing": "9g/200ml I 3s, II 3s, III 5s, IV 10s",
@@ -19,7 +19,7 @@
       "type": "oolong",
       "comment": "spoczko",
       "id": 2,
-      "date": "2020-06-03"
+      "date": "2020-06-09"
     },
     {
       "name": "Nilgiri Kairbetta ",
@@ -43,6 +43,54 @@
       "comment": "",
       "id": 5,
       "date": "2020-06-18"
+    },
+    {
+      "name": "mmm",
+      "country": "Japonia",
+      "info": "",
+      "brewing": "",
+      "smell": "",
+      "taste": "",
+      "type": "czarna",
+      "comment": "",
+      "date": "2020-06-16",
+      "id": 6
+    },
+    {
+      "name": "",
+      "country": "",
+      "info": "",
+      "brewing": "",
+      "smell": "",
+      "taste": "",
+      "type": "",
+      "comment": "",
+      "date": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "country": "",
+      "info": "",
+      "brewing": "",
+      "smell": "",
+      "taste": "",
+      "type": "",
+      "comment": "",
+      "date": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "country": "",
+      "info": "",
+      "brewing": "",
+      "smell": "",
+      "taste": "",
+      "type": "",
+      "comment": "",
+      "date": "",
+      "id": 11
     }
   ]
 }

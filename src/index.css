@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Roboto:wght@300;500&display=swap');
+/* @import url("https://use.fontawesome.com/releases/v6.0/css/all.css"); */
+
+#root {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: 'Lora', serif;
+    letter-spacing: 2px;
+    font-weight: 300;
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/nithin-p-john.jpg');
+    background-size: cover;
+    box-sizing: border-box;
+  }
+  :root {
+      --contrast-color-dark:#2e0014;
+      --contrast-color: #442220;
+      --main-color-dark: #809848;
+      --main-color:  #b0ca87;
+      --font-color: #b5dead;
+  }
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    background-color: var(--contrast-color-dark);
+  }
+
+  .container {
+      width: 75%;
+      height: 75vh;
+      margin: 0 auto;
+      background-color: var(--main-color);
+      font-size: 1.7em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 85%;
+      border-radius: 5px;
+      position: relative;
+      overflow-y:auto;
+      scrollbar-color: var(--main-color-dark); 
+  }
+  .hello {
+    width: 75%;
+    min-height: 75vh;
+    margin: 0 auto;
+    background-color: var(--font-color);
+    font-size: 1.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 85%;
+    border-radius: 5px;
+  }
+  .hidden-container {
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    opacity: 80%;
+  }
+  .hidden-div {
+    transition-property: opacity;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 2s;
+    opacity: 80%;
+  }
+
+  .nav_header {
+      background-image: url('images/nithin-p-john.jpg');
+      background-size: cover;
+      width: 100%;
+      height: 5vh;
+  }
+  .nav {
+      width: 100%;
+      min-height: 8vh;
+      background-color: var(--contrast-color-dark);
+      margin-bottom: 30px;
+      opacity: 85%;
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      position: relative;
+  }
+  .logo-image {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    background-image: url('images/tea--leaf.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* border: 2px solid var(--font-color); */
+    position: absolute;
+    left: 20px;
+    right: 60px;
+    top: 15px;
+  }
+  .logo-image:hover {
+    border: 2px solid var(--font-color);
+  }
+  .nav_ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+  }
+  .nav_li {
+    display: inline-block;
+    font-size: 2.2em;
+    text-decoration: none;
+    color: var(--font-color);
+    text-transform: uppercase;
+    margin: 20px 0px 20px 40px;
+    /* margin-left: 100px;
+    margin-right: 20px; */
+    /* margin-bottom: 45px; */
+  }
+  .nav_li-start {
+      margin-left: 160px;
+  }
+  .nav_link {
+    text-decoration: none;
+    color: var(--main-color); 
+  }
+  .nav_li:hover {
+      color: var(--main-color);
+  }
+
+  .citation {
+    font-size: 1.2em;
+    height: 50%;
+    width:80%;
+    background-color: var(--font-color);
+    margin: 0 auto;
+    padding: 1.5em;
+    text-indent: 2em;
+    line-height: 1.7em;
+  }
+.citation_source {
+    text-align: right;
+}
+.ciatation_source-title {
+    font-style: italic;
+}
+h1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1,8em;
+}
+
+.teaString_box {
+    width: 100%;
+}
+.teaString_sort {
+    font-size: 0.7em;
+    color: var(--contrast-color);
+    position: absolute;
+    left: 90%;
+    bottom: 90%
+}
+.teaString {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 8%;
+    border-radius: 1%;
+    margin: 10px;
+    padding: 1px; 
+    background-color: var(--main-color-dark);
+    opacity: 100%;
+    margin-left: 30px;
+}
+/* .teaString:before{
+    color: rgb(228, 35, 99);
+    content: '\f299'; 
+    font-family: "Font Awesome 6 Free"; 
+    font-size:40px;
+    font-weight: 900;
+} */
+.teaString_link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--contrast-color-dark);
+}
+.teaString_link-div {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: space-evenly; */
+}
+.teaString_link-div_p {
+    display: inline-block;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+}
+.teaString_btn {
+    display: inline-block;
+    background-color: var(--contrast-color);
+    color: var(--font-color);
+    border: none;
+    width: 45px;
+    height: 45px;
+    margin: 3px;
+    padding: 3px;
+}
+.teaString_btn:hover {
+    background-color: var(--contrast-color-dark);
+}
+.btn-edit{
+    background-image: url(images/gear.png);
+    background-size: contain;
+}
+.btn-delete {
+    background-image: url(images/dustbin.png);
+    background-size: contain;
+}
+
+.teaString_select {
+    width: 85px;
+}
+.form_box {
+    background-color: var(--main-color-dark);
+    width: 75%;
+    height: 80%;
+    border-radius: 5px;
+    padding: 25px;
+    margin-bottom: 25px;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+select {
+    background-color: var(--font-color);
+    color: var(--contrast-color);
+    width : 20%; 
+    height: 25px;
+    /* float: right; */
+    border-radius: 3px;
+    font-family: inherit;
+    color: var(--contrast-color);
+    letter-spacing: 2px;
+    margin-left: 15px;
+}
+input, textarea {
+    background-color: var(--font-color);
+    color: var(--contrast-color-dark);
+    width : 40%;
+    height: 25px;
+    padding: 5px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: none;
+    font-family: inherit;
+    border-radius: 3px;
+    letter-spacing: 2px
+}
+input:focus, textarea:focus {
+    box-shadow: 2px 2px var(--main-color-dark);
+}
+textarea {
+    width: 100%;
+    min-width: 600px;
+    height: 50px;
+    resize: none;
+    float: left;
+}
+.form_date{
+    width: 15%;
+    float: right;
+}
+.form_btn {
+    background-color: var(--main-color);
+    font-family: inherit;
+    color: var(--contrast-color-dark);
+    height: 25px;
+    width: 150px;
+    float: left; 
+    border: none;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
+.save-btn {
+    float: right;
+    margin-top: 70px;
+    font-weight: bold;
+    background-color: var(--contrast-color);
+    color: var(--font-color);
+}
+.addPhoto-btn {
+    float: left;
+    margin-top: 10px;
+}
+label {
+    color: var(--contrast-color-dark);
+    float: right;
+}
+.learn {
+    background-color: var(--main-color);
+    font-size: 1.7em;
+    opacity: 85%;
+    border-radius: 5px;
+    padding: 25px;  
+    overflow-y: auto;
+    text-indent: 2em;
+    display: block;
+}
+.learn {
+    width: 70%;
+}
+
+.container::-webkit-scrollbar {
+    background-color: var(--main-color-dark);
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: var(--contrast-color);
+}
+.container-learn::-webkit-scrollbar {
+    background-color: var(--main-color-dark);
+}
+.container-learn::-webkit-scrollbar-thumb {
+    background-color: var(--contrast-color);
+}
+.form-box::-webkit-scrollbar {
+    background-color: var(--main-color-dark);
+}
+.form-box::-webkit-scrollbar-thumb {
+    background-color: var(--contrast-color);
+}
+textarea::-webkit-scrollbar {
+    background-color: var(--main-color-dark);
+}
+textarea.form-box::-webkit-scrollbar-thumb {
+    background-color: var(--contrast-color);
+}
+.tea_box {
+    background-color: var(--main-color-dark);
+    width: 75%;
+    height: 80%;
+    border-radius: 5px;
+    padding: 25px;
+    margin-bottom: 25px;
+    overflow: auto;
+}
+.tea_name {
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--contrast-color);
+    color: var(--font-color);
+    padding: 3px;
+    border-radius: 3px;
+}
+.tea_info-label {
+    font-weight: bold;
+    line-height: 2em;;
+    text-transform: uppercase;
+}
+.tea_info-text {
+    background-color: var(--main-color);
+    border-radius: 3px;
+    padding: 3px;
+}
+thead {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    position: absolute;
+}
+tr {
+    max-height: 40px;
+    /* overflow-y:auto;
+    scrollbar-color: var(--main-color-dark);  */
+}
+th {
+    width: 30%;
+    text-transform: uppercase;
+    background-color: var(--main-color-dark);
+    padding: 10px;
+}
+.tea_name {
+    background-color: var(--contrast-color);
+    color: var(--font-color);
+}
+td {
+    width: 70%;
+    max-height: 40px;
+    padding: 10px;
+    /* overflow-y:auto;
+    scrollbar-color: var(--main-color-dark);  */
+}
+table {
+    text-align: left;
+    width: 80%;
+    max-height: 800px;
+    color: var(--contrast-color-dark);
+}
+.tableScroll {
+    overflow-y: scroll;
+    max-height: 90%;
+}

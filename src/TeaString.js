@@ -33,13 +33,19 @@ const TeaString = ({name, country, date, id}) => {
 
     return(
         <div className='teaString'>
-            <Link to={`/tea/${id}`}>
-                <p>{name} -- {country} -- {date}</p>
-            </Link>
-            <Link to={`/editTea/${id}`}>
-                <button className='teaString_btn'>Edytuj</button>
-            </Link>   
-            <button className='teaString_btn' onClick={handleDelete}> Usuń </button> 
+            <div className='teaString_link-div'>
+               <Link className='teaString_link' to={`/tea/${id}`}>
+                    <p className='teaString_link-div_p'>{name}</p> 
+                    <p className='teaString_link-div_p'>{country}</p>
+                    <p className ='teaString_link-div_p'>{date}</p>
+                </Link> 
+            </div>
+            <div>
+                <Link to={`/editTea/${id}`}>
+                <button className='teaString_btn btn-edit' alt='Edytuj'></button>
+                </Link>   
+                <button className='teaString_btn btn-delete' onClick={handleDelete}></button> 
+            </div>
         </div>
     )
 }
