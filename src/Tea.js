@@ -13,9 +13,10 @@ class Tea extends Component {
         taste: '',
         type: '',
         comment: '',
-        // date: '',
+        date: '',
+        id: this.props.match.params.id
     }
-
+    
     componentDidMount(){
         
         const id = this.props.match.params.id;
@@ -38,175 +39,117 @@ class Tea extends Component {
             .catch(error => {
                 console.log('Tea-error', error);
             });
-        }
+        };
+      
 
     render(){
         
-        const {name, country, info, brewing, smell, taste, type, comment} = this.state;
+        const {name, country, info, brewing, smell, taste, type, comment, id} = this.state;
+        const handleDelete = (e) => {
+                    const id = this.props.match.params.id;
+                    if (window.confirm('Na pewno chcesz usunąć ten wpis?')){
+                        fetch(`${TEA_ROUTE}/${id}`, {
+                        method: "DELETE"
+                        })
+                        .then(response => {
+                            console.log('deleteResponse:', response.ok);
+                        })
+                        .catch(error => {
+                            console.log('error', error);
+                        });
+                    } else {
+                        return null;
+                    }
+        }
 
         return(
-            <div className='container'>
-                
-                <table>
-                    <thead>
-                        <tr>
-                            <th className='tea_name' colSpan='2'>{name}</th>
-                            
-                        </tr>
-                    </thead>
-                    <div className='tableScroll'>
-                    <tbody>
-                        <tr>
-                            <th>
-                                Kraj pochodzenia:
-                            </th>
-                            <td>
-                                {country}oooooooooooooo
-                                oooooooooooooo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                oooooooooooooooooo
-                                oooooooooooooo
-
-
-
-
-                                oooooooooooooo
-
-
-
-
-                                oooooooooooooo
-                                oooooooooooooo 
-                                oooooooooooooooooo
-                                oooooooooooooo
-                                oooooooooooooo
-                                ooooooooooooo
-                                oooooooooooooo 
-                                oooooooooooooooooo
-                                oooooooooooooo
-                                oooooooooooooo
-                                ooooooooooooo
-                                oooooooooooooo 
-                                oooooooooooooooooo
-                                oooooooooooooo
-                                oooooooooooooo
-                                ooooooooooooo
-                                oooooooooooooo 
-                                oooooooooooooooooo
-                                oooooooooooooo
-                                oooooooooooooo
-                                ooooooooooooo
-                                oooooooooooooo 
-                                oooooooooooooooooo
-                                oooooooooooooo
-                                oooooooooooooo
-                                ooooooooooooo
-                                oooooooooooooo 
-                                oooooooooooooooooo
-                                oooooooooooooo
-                                oooooooooooooo
-                                ooooooooooooo
-                                oooooooooooooo 
-                                oooooooooooooooooo
-                                oooooooooooooo
-                                oooooooooooooo
-                                ooooooooooooo
-                                oooooooooooooo 
-                                oooooooooooooooooo
-                                oooooooooooooo
-                                oooooooooooooo\
-                                ooooooooooooo
-                                oooooooooooooo 
-                                oooooooooooooooooo
-                                oooooooooooooo
-                                oooooooooooooo
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Typ:
-                            </th>
-                            <td>
-                                {type}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Dodatkowe informacje:
-                            </th>
-                            <td>
-                                {info}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Sposób parzenia:
-                            </th>
-                            <td>
-                                {brewing}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Wrażenia zapachowe:
-                            </th>
-                            <td>
-                                {smell}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Wrażenia smakowe:
-                            </th>
-                            <td>
-                                {taste}
-                            </td>
-                        </tr>               
-                    </tbody>
-                    </div>
-                </table>
-
-{/* 
-                <div className='tea_box'>
-                    <div>    
-                        <span className='tea_name'>{name}</span>
-                    </div>
-                    <div>
-                        <span className='tea_info-label'>Kraj pochodzenia:</span> <span className='tea_info-text'>{country}</span>
-                    </div>
-                    <div>
-                        <span className='tea_info-label'>Dodatkowe informacje:</span> <span className='tea_info-text'>{info}</span>
-                    </div>
-                    <div>
-                        <span className='tea_info-label'>Sposób parzenia:</span> <span className='tea_info-text'>{brewing}</span>
-                    </div>
-                    <div>
-                        <span className='tea_info-label'>Wrażenia zapachowe:</span> <span className='tea_info-text'>{smell}</span><br/>
-                        <span className='tea_info-label'>Wrażenia smakowe:</span> <span className='tea_info-text'>{taste}</span><br/>
-                        <span className='tea_info-label'>Typ:</span> <span className='tea_info-text'>{type}</span><br/>
-                    </div>
-                    <div>
-                        <span className='tea_info-text'>{comment}</span>
-                    </div>
-                    <div>FOTO</div>
-                    <Link to='/teaList'>
-                        <button className='form_btn save-btn'>Wróć do listy</button>
+            <div className='container-tea'>
+                <div className='table-box'>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th className='tea_name' colSpan='2'>{name}</th>
+                            </tr>
+                        </thead>
+                        <div className='tableScroll'>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        Kraj pochodzenia:
+                                    </th>
+                                    <td>
+                                        {country}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Typ:
+                                    </th>
+                                    <td>
+                                        {type}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Dodatkowe informacje:
+                                    </th>
+                                    <td>
+                                        {info}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Sposób parzenia:
+                                    </th>
+                                    <td>
+                                        {brewing}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Wrażenia zapachowe:
+                                    </th>
+                                    <td>
+                                        {smell}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Wrażenia smakowe:
+                                    </th>
+                                    <td>
+                                        {taste}
+                                    </td>
+                                </tr>    
+                                <tr>
+                                    <th>
+                                        Uwagi:
+                                    </th>
+                                    <td>
+                                        {comment}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Zdjęcia:
+                                    </th>
+                                    <td>
+                                        foto foto foto
+                                    </td>
+                                </tr>                 
+                            </tbody>
+                        </div>
+                    </table>
+                </div>
+                <div className='tea_btns'>
+                    <Link to={`/editTea/${id}`}>
+                        <button className='tea_btn tea_btn-edit btn-edit'></button>
                     </Link>
-                </div>     */}
+                        <button className='tea_btn tea_btn-delete btn-delete' onClick={handleDelete}></button>
+                    <Link to='/teaList'>
+                        <button className='tea_btn tea_btn-goBack'></button>
+                    </Link>
+                </div>
             </div>    
         )
     }

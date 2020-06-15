@@ -20,6 +20,7 @@ class EditTeaForm extends Component {
     componentDidMount(){
         console.log(this.props.match.params.id);
         const id = this.props.match.params.id;
+
         fetch(`${TEA_ROUTE}/${id}`)
             .then(response => response.json())
             .then(data => {
@@ -68,64 +69,111 @@ class EditTeaForm extends Component {
             .catch(error => {
                 console.log('EditTeaForm-error:', error);
             });
+            this.props.history.push("/teaList");
     }
     render(){ 
      
         const {name, country, info, brewing, smell, taste, type, comment, date} = this.state;
     
         return (    
+
             <div className='container'>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Nazwa:</label>
-                    <input type='text' name='name' value={name} onChange={this.handleChange}/>
-                    <label>Data:</label>
-                    <input type='date' name='date' value={date} onChange={this.handleChange} />
-                        {/* <DatePicker
-                            name = 'date'
-                            value={date}
+                <div className='form_box'>
+                    <form onSubmit={this.handleSubmit}>
+                        <input 
+                            type='text'    
+                            name='name' 
+                            value={name} 
                             onChange={this.handleChange}
-                        /> */}
-                    <label>Kraj pochodzenia:</label>
-                    <select name='country' value={country} onChange={this.handleChange}>
-                            <option>Wybierz</option>
-                            <option value="Chiny">Chiny</option>
-                            <option value="Japonia">Japonia</option>
-                            <option value="Indie">Indie</option>
-                            <option value="Nepal">Nepal</option> 
-                            <option value="Taiwan">Tajwan</option> 
-                            <option value="Sri Lanka">Sri Lanka</option> 
-                            <option value="Korea">Korea</option> 
-                            <option value="Malawi">Malawi</option> 
-                            <option value="Kenia">Kenia</option>  
-                            <option value="Gruzja">Gruzja</option> 
-                            <option value="Inny">Inny</option>    
-                    </select>
-                    <label>Dodatkowe informacje:</label>
-                    <textarea type='text' name='info' value={info} onChange={this.handleChange}/>
-                    <label>Sposób parzenia:</label>
-                    <textarea type='text' name='brewing' value={brewing} onChange={this.handleChange}/>
-                    <label>Zapach:</label>
-                    <textarea type='text' name='smell' value={smell} onChange={this.handleChange}/>
-                    <label>Smak:</label>
-                    <textarea type='text' name='taste' value={taste} onChange={this.handleChange}/>
-                    <label>Typ:</label>
-                    <select type='text' name='type' value={type} onChange={this.handleChange}>
-                            <option>Wybierz</option>
-                            <option value='czarna'>Czarna</option>
-                            <option value='zielona'>Zielona</option>
-                            <option value='biała'>Biała</option>
-                            <option value='pu-erh shu'>Shu</option>
-                            <option value='pu-erh sheng'>Sheng</option>
-                            <option value='oolong'>Oolong</option>
-                            <option value='żółta'>Żółta</option>
-                            <option value='inna'>Inna</option>
-                    </select>
-                    <button>Dodaj zdjęcie</button>
-                    <label>Uwagi:</label>
-                    <textarea type='text' name='comment' value={comment} onChange={this.handleChange}/>
-                    <button type='submit'>Zapisz</button>
+                            placeholder='Nazwa:'
+                        />
+                        <select 
+                            name='country' 
+                            value={country} 
+                            onChange={this.handleChange}>
+                                <option>Kraj pochodzenia:</option>
+                                <option value="Chiny">Chiny</option>
+                                <option value="Japonia">Japonia</option>
+                                <option value="Indie">Indie</option>
+                                <option value="Nepal">Nepal</option> 
+                                <option value="Taiwan">Tajwan</option> 
+                                <option value="Sri Lanka">Sri Lanka</option> 
+                                <option value="Korea">Korea</option> 
+                                <option value="Malawi">Malawi</option> 
+                                <option value="Kenia">Kenia</option>  
+                                <option value="Gruzja">Gruzja</option> 
+                                <option value="Inny">Inny</option>           
+                        </select> 
+                        <select 
+                            type='text' 
+                            name='type' 
+                            value={type} 
+                            onChange={this.handleChange}>
+                                <option>Typ:</option>
+                                <option value='czarna'>Czarna</option>
+                                <option value='zielona'>Zielona</option>
+                                <option value='biała'>Biała</option>
+                                <option value='pu-erh shu'>Shu</option>
+                                <option value='pu-erh sheng'>Sheng</option>
+                                <option value='oolong'>Oolong</option>
+                                <option value='żółta'>Żółta</option>
+                                <option value='inna'>Inna</option>
+                        </select>
+                        <input 
+                            type='date'    
+                            name='date' 
+                            value={date} 
+                            onChange={this.handleChange}
+                            className='form_date'
+                        />
+                        <textarea 
+                            type='text' 
+                            name='info' 
+                            value={info} 
+                            onChange={this.handleChange}
+                            placeholder='Dodatkowe informacje:'
+                        />   
+                        <br/>  
+                        <textarea 
+                            type='text' 
+                            name='brewing' 
+                            value={brewing} 
+                            onChange={this.handleChange}
+                            placeholder='Sposób parzenia:'
+                        />
+                        <br/>
+                        <textarea 
+                            type='text' 
+                            name='smell' 
+                            value={smell} 
+                            onChange={this.handleChange} 
+                            placeholder='Zapach:'
+                        />
+                        <textarea 
+                            type='text' 
+                            name='taste' 
+                            value={taste} 
+                            onChange={this.handleChange}
+                            placeholder='Smak:'
+                        />
+                        <textarea 
+                            type='text' 
+                            name='comment' 
+                            value={comment} 
+                            onChange={this.handleChange}
+                            placeholder='Uwagi:'
+                        />
+                        <br/>
+                        <button className='form_btn addPhoto-btn'>
+                            Dodaj zdjęcia
+                        </button>
+                        <br/>
+                        <button type='submit' className='form_btn save-btn'>
+                            Zapisz
+                        </button>
                 </form> 
-            </div>    
+            </div>
+        </div>    
         )
     }
 }

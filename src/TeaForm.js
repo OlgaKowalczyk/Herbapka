@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TEA_ROUTE } from './apiConstants';
+// import { Redirect } from 'react-router-dom';
 // import DayPicker from 'react-day-picker';
 // import 'react-day-picker/lib/style.css';
 // import 'react-datepicker/dist/react-datepicker.css';
@@ -18,6 +19,7 @@ class TeaForm extends Component {
         type: '',
         comment: '',
         date: '',
+        // redirect: false,
     }
 
     handleChange = (e) => {
@@ -39,19 +41,33 @@ class TeaForm extends Component {
             })
             .then(response => response.json())
             .then(data => {
-                console.log('TeaForm-posted: ', data);
+                console.log('TeaForm-posted:', data);
             })
             .catch(error => {
                 console.log('TeaForm-post-error', error);
-            });
+            })
+        this.props.history.push("/teaList");
     }
+
+    // setRedirect = () => {
+    //     this.setState({
+    //       redirect: true
+    //     })
+    //   }
+    //   renderRedirect = () => {
+    //     if (this.state.redirect) {
+    //       return <Redirect to='/teaList' />
+    //     }
+    //   }
+
     render(){ 
      
         const {name, country, info, brewing, smell, taste, type, comment, date} = this.state;
 
         return (    
+            <>
+         
             <div className='container'>
-                 <br/>
                 <div className='form_box'>
                     <form onSubmit={this.handleSubmit}>
                         {/* <label>
@@ -184,7 +200,8 @@ class TeaForm extends Component {
                         </button>
                     </form> 
                 </div>
-            </div>    
+            </div>   
+            </> 
         )
     }
 }

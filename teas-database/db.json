@@ -11,15 +11,15 @@
       "date": "2020-06-01"
     },
     {
-      "name": "Da Hong Pao ",
+      "name": "Da Hong Pao 2020",
       "country": "Chiny",
-      "info": "zbiór 2018",
+      "info": "zbiór 2020",
       "brewing": "9g/200ml I 3s, II 3s, III 5s, IV 10s",
       "taste": "lukrecja, cytrusy",
-      "type": "oolong",
+      "type": "",
       "comment": "spoczko",
       "id": 2,
-      "date": "2020-06-09"
+      "date": ""
     },
     {
       "name": "Nilgiri Kairbetta ",
@@ -45,52 +45,16 @@
       "date": "2020-06-18"
     },
     {
-      "name": "mmm",
-      "country": "Japonia",
-      "info": "",
-      "brewing": "",
-      "smell": "",
+      "name": "Feng Hłang Dan Cłonk Karkoil Roasted",
+      "country": "Korea",
+      "info": "xsaxbv",
+      "brewing": "sssddassb",
+      "smell": "nabb",
       "taste": "",
-      "type": "czarna",
+      "type": "",
       "comment": "",
-      "date": "2020-06-16",
+      "date": "",
       "id": 6
-    },
-    {
-      "name": "",
-      "country": "",
-      "info": "",
-      "brewing": "",
-      "smell": "",
-      "taste": "",
-      "type": "",
-      "comment": "",
-      "date": "",
-      "id": 8
-    },
-    {
-      "name": "",
-      "country": "",
-      "info": "",
-      "brewing": "",
-      "smell": "",
-      "taste": "",
-      "type": "",
-      "comment": "",
-      "date": "",
-      "id": 10
-    },
-    {
-      "name": "",
-      "country": "",
-      "info": "",
-      "brewing": "",
-      "smell": "",
-      "taste": "",
-      "type": "",
-      "comment": "",
-      "date": "",
-      "id": 11
     }
   ]
 }
