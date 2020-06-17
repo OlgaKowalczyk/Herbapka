@@ -13,6 +13,7 @@ import EditTeaForm from './EditTeaForm';
 import LearnAboutTea from './LearnAboutTea';
 import Tea from './Tea';
 import Hello from './Hello';
+import ImageUpload from './ImageUpload'
 
 const App = () => {
   
@@ -27,6 +28,7 @@ const App = () => {
             <Route path='/editTea/:id' component={EditTeaForm} />          
             <Route path='/learn' component={LearnAboutTea} />
             <Route path='/tea/:id' component={Tea} />  
+            <Route path='/photo' component={ImageUpload} />  
         </Switch>
         </>
      </HashRouter>

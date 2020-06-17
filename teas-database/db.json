@@ -1,59 +1,63 @@
 {
   "teas": [
     {
-      "name": "Tie Guan Yin 2019",
+      "name": "Ya Bao Yesheng",
       "country": "Chiny",
-      "taste": "tran :<",
-      "aroma": "smuteczek",
-      "comment": "fujka :<",
-      "type": "oolong",
+      "info": "herbata pączkowa z dzikich drzew z Yunnanu, z których zwykle produkuje się pu-erh, zbiór wiosenny",
+      "brewing": "5g/100ml 95*, I 1.5min, II 3min III 6min",
+      "taste": "słodki, leśny",
+      "smell": "delikatny, sosnowy",
+      "comment": "bardzo delikatna, orzeźwiająca",
+      "type": "biała",
       "id": 1,
       "date": "2020-06-01"
     },
     {
-      "name": "Da Hong Pao 2020",
+      "name": "Da Hong Pao Premium 2019",
       "country": "Chiny",
-      "info": "zbiór 2020",
-      "brewing": "9g/200ml I 3s, II 3s, III 5s, IV 10s",
+      "info": "zbiór wiosna 2019, prowincja Fujian, kultywar Qi Dan nazywany „czystym Da Hong Pao”, bo jest bezpośrednim klonem jednego z legendarnych krzewów-matek",
+      "brewing": "7g/100ml 100*, I 10s, II 10s, III 15s, IV 30s, V 1min, VI 3min",
       "taste": "lukrecja, cytrusy",
-      "type": "",
-      "comment": "spoczko",
+      "smell": "bez, konwalie",
+      "type": "oolong",
+      "comment": "Mocno palona, wyraźny mineralny posmak, zbalansowana",
       "id": 2,
-      "date": ""
+      "date": "2020-01-21"
     },
     {
       "name": "Nilgiri Kairbetta ",
-      "country": "Nepal",
+      "country": "Indie",
       "info": "zbiór luty 2020r., 2000m n.p.m.",
       "brewing": "90* 10g/400ml I 2min II 4min",
       "smell": "biszkopty, cytrusy",
-      "comment": "mniam c:",
-      "type": "inny",
-      "id": 3,
-      "date": "2020-06-20"
-    },
-    {
-      "name": "Bi Luo Chun",
-      "country": "Chiny",
-      "info": "pyszne bo świeże",
-      "brewing": "",
-      "smell": "",
-      "taste": "",
-      "aroma": "",
-      "comment": "",
-      "id": 5,
-      "date": "2020-06-18"
-    },
-    {
-      "name": "Feng Hłang Dan Cłonk Karkoil Roasted",
-      "country": "Korea",
-      "info": "xsaxbv",
-      "brewing": "sssddassb",
-      "smell": "nabb",
-      "taste": "",
+      "taste": "goryczka, cytusy, owoce tropikalne",
       "type": "",
-      "comment": "",
-      "date": "",
+      "comment": "orzeźwiająca, pyszna :>",
+      "id": 3,
+      "date": "2020-06-16"
+    },
+    {
+      "name": "Sanxia Bi Luo Chun 2020",
+      "country": "Tajwan",
+      "info": "uprawa ekologiczna",
+      "brewing": "10g/200ml 85*, I 1.5min II 2min III 4min",
+      "smell": "nuty warzywne",
+      "taste": "wytrawny, limonka",
+      "type": "zielona",
+      "comment": "łagodna, zbalansowana",
+      "id": 5,
+      "date": "2020-03-18"
+    },
+    {
+      "name": "Xianghua Tie Guan Yin",
+      "country": "Chiny",
+      "info": "Fujian 2020r.",
+      "brewing": "5g/250ml 90*, I 1.5min, II 1min, III 2min IV 4min",
+      "smell": "kwiatowy, słodki",
+      "taste": "kwiatowy, lekko kwaskowaty",
+      "type": "oolong",
+      "comment": "długo utrzymujący się, ewoluujący posmak",
+      "date": "2020-02-16",
       "id": 6
     }
   ]

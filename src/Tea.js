@@ -32,6 +32,7 @@ class Tea extends Component {
                     brewing: data.brewing,
                     smell: data.smell,
                     taste: data.taste,
+                    type: data.type,
                     aroma: data.aroma,
                     comment: data.comment,
                 })

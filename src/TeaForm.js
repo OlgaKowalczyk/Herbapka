@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TEA_ROUTE } from './apiConstants';
+import ImageUpload from './ImageUpload';
 // import { Redirect } from 'react-router-dom';
 // import DayPicker from 'react-day-picker';
 // import 'react-day-picker/lib/style.css';
@@ -19,7 +20,7 @@ class TeaForm extends Component {
         type: '',
         comment: '',
         date: '',
-        // redirect: false,
+        // image: '',
     }
 
     handleChange = (e) => {
@@ -28,9 +29,21 @@ class TeaForm extends Component {
         })
     }
     
+    // addPhoto = (e) => {
+    //     if (e.target.files[0]) {
+    //         const image = e.target.files[0];
+    //         this.setState(() => ({image}));
+    //     }
+    // }
+
+    // handleUpload = () => {
+    //     const { image } = this.state;
+    //     console.log('upload!');
+    // }    
+
     handleSubmit = (e) => {
         e.preventDefault();
-        // validation: nazwa
+        // TODO validation: nazwa
     
         fetch(TEA_ROUTE, {
             method: "POST",
@@ -62,11 +75,10 @@ class TeaForm extends Component {
 
     render(){ 
      
-        const {name, country, info, brewing, smell, taste, type, comment, date} = this.state;
+        const {name, country, info, brewing, smell, taste, type, comment, date, image} = this.state;
 
         return (    
             <>
-         
             <div className='container'>
                 <div className='form_box'>
                     <form onSubmit={this.handleSubmit}>
@@ -102,7 +114,7 @@ class TeaForm extends Component {
                             name='type' 
                             value={type} 
                             onChange={this.handleChange}>
-                                <option>Typ:</option>
+                                <option>Typ herbaty:</option>
                                 <option value='czarna'>Czarna</option>
                                 <option value='zielona'>Zielona</option>
                                 <option value='biała'>Biała</option>
@@ -191,11 +203,9 @@ class TeaForm extends Component {
                             placeholder='Uwagi:'
                         />
                         <br/>
-                        <button className='form_btn addPhoto-btn'>
-                            Dodaj zdjęcia
-                        </button>
+                        <ImageUpload />
                         <br/>
-                        <button type='submit' className='form_btn save-btn'>
+                        <button type='submit' className='form_btn save-btn' onClick={this.handleUpload}>
                             Zapisz
                         </button>
                     </form> 

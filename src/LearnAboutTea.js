@@ -5,7 +5,9 @@ const LearnAboutTea = () => {
     return (
         <div className='container learn'>
             <div className='learnAbout'>
-                <h2>Zielona herbata</h2>
+                <div className="learn_title-box">
+                    <h2>Zielona herbata</h2>
+                </div>
                 <p>
                     Herbaty zielone charakteryzuje najkrótszy ze wszystkich gatunków czas oksydacji (czyli utlenienia liści), 
                     który zostaje zatrzymany dzięki szybkiej obróbce cieplnej – w przypadku herbat chińskich listki są podgrzewane 
@@ -16,14 +18,18 @@ const LearnAboutTea = () => {
                 </p>
             </div>
             <div className='learnAbout'>
-                <h2>Biała herbata</h2>
+                <div className="learn_title-box">
+                    <h2>Biała herbata</h2>
+                </div>
                 <p>
                     Najprawdopodobniej pierwszy wytwarzany przez człowieka gatunek herbaty, przygotowywany z młodych, lekko utlenionych 
                     liści lub pączków. Napar białej herbaty jest przejrzysty a w smaku delikatnie słodki, z subtelnym ziołowym posmakiem.
                 </p>
             </div>
             <div className='learnAbout'>
-                <h2>Czarna herbata</h2>
+                <div className="learn_title-box">
+                    <h2>Czarna herbata</h2>
+                </div>
                 <p>
                     Wciąż najbardziej popularny na Zachodzie gatunek herbaty, wytwarzany między innymi w Chinach, 
                     Indiach, Nepalu, Gruzji, na Cejlonie, a także w krajach Bliskiego Wschodu i Środkowej Afryki. 
@@ -34,7 +40,9 @@ const LearnAboutTea = () => {
                 </p>
             </div>
             <div className='learnAbout'>
-                <h2>Żółta herbata</h2>
+                <div className="learn_title-box">
+                    <h2>Żółta herbata</h2>
+                </div>
                 <p>
                     To najrzadszy rodzaj herbaty, wytwarzany w niewielkich ilościach wyłącznie w Chinach. 
                     Zgodnie z podaniami przez setki lat zarezerwowany był wyłącznie dla ust samego cesarza. 
@@ -44,7 +52,9 @@ const LearnAboutTea = () => {
                 </p>
             </div>
             <div className='learnAbout'>
-                <h2>Herbata Oolong</h2>
+                <div className="learn_title-box">
+                    <h2>Herbata Oolong</h2>
+                </div>
                 <p>
                     Stopień oksydacji, oolongów, nazywanych też herbatą turkusową, może wynosić od 10% do 80%, co skutkuje niezwykłą 
                     różnorodnością w obrębie tego gatunku. Liście mniej utlenionych, jasnych oolongów są najczęściej zwinięte w formie kuleczek, 
@@ -56,7 +66,9 @@ const LearnAboutTea = () => {
                 </p>
             </div>
             <div className='learnAbout'>
-                <h2>Herbata Pu-erh</h2>
+                <div className="learn_title-box">
+                    <h2>Herbata Pu-erh</h2>
+                </div>
                 <p>
                     Pu-erh (w Polsce często nazywana herbatą czerwoną) to rodzaj dojrzewającej herbaty pochodzącej z chińskiej prowincji Yunnan. 
                     Liście pu-erhów suszone są na słońcu, a następnie poddawane procesowi dojrzewania. Etap ten tradycyjnie mógł przebiegać nawet 
@@ -68,6 +80,7 @@ const LearnAboutTea = () => {
                     niemal nieprzezroczystym naparem oraz głębokim, gładkim smakiem i aromatem kojarzącym się ze świeżą wilgotną ziemią lub mokrym 
                     drewnem. 
                 </p>
+                <hr/>
             </div>
             <br/>
             <p>
