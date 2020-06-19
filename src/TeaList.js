@@ -7,7 +7,7 @@ const TeaList = () => {
 
     const [teaList, setTeaList] = useState([]);
     const [sortingValue, setSortingValue] = useState('date');
-    const [renderValue, setRenderValue] = useState(0);
+    const [renderingValue, setRenderingValue] = useState(0);
    
   
     useEffect(() => {
@@ -20,7 +20,7 @@ const TeaList = () => {
             .catch(error => {
                 console.log('TeaList-error:', error);
             });
-    }, [sortingValue, renderValue]);
+    }, [sortingValue, renderingValue]);
 
     const handleSort = (e) => {
         setSortingValue(e.target.value);
@@ -38,8 +38,8 @@ const TeaList = () => {
         return 0;
       }
     
-    const handleRenderValue = () => {
-        setRenderValue( renderValue + 1);
+    const handleRenderingValue = () => {
+        setRenderingValue( renderingValue + 1);
     } 
     
     return(
@@ -64,7 +64,7 @@ const TeaList = () => {
                     {(teaList.sort(compare)).map(tea => {
                         return (
                             <li key={tea.id}> 
-                                <TeaString name={tea.name} country={tea.country} date={tea.date} id={tea.id} renderValue={handleRenderValue}/> 
+                                <TeaString name={tea.name} country={tea.country} date={tea.date} id={tea.id} renderingValue={handleRenderingValue}/> 
                             </li>
                         )
                     })}

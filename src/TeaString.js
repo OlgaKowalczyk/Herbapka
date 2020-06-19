@@ -3,7 +3,7 @@ import { TEA_ROUTE }  from './apiConstants';
 import { Link } from 'react-router-dom';
 
 
-const TeaString = ({name, country, date, id, renderValue}) => {
+const TeaString = ({name, country, date, id, renderingValue}) => {
 
     console.log('TeaString-id:', id)
 
@@ -19,7 +19,7 @@ const TeaString = ({name, country, date, id, renderValue}) => {
             .catch(error => {
                 console.log('error', error);
             }); 
-            renderValue();
+            renderingValue();
         } else {
             return null;
         }
