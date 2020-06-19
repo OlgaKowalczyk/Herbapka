@@ -3,13 +3,12 @@ import { TEA_ROUTE }  from './apiConstants';
 import { Link } from 'react-router-dom';
 
 
-const TeaString = ({name, country, date, id}) => {
+const TeaString = ({name, country, date, id, renderValue}) => {
 
     console.log('TeaString-id:', id)
 
     const handleDelete = (e) => {
 
-        
         if (window.confirm('Na pewno chcesz usunąć ten wpis?')){
             fetch(`${TEA_ROUTE}/${id}`, {
             method: "DELETE"
@@ -20,20 +19,11 @@ const TeaString = ({name, country, date, id}) => {
             .catch(error => {
                 console.log('error', error);
             }); 
+            renderValue();
         } else {
             return null;
         }
     }
-
-    // fetch(TEA_ROUTE)
-    // .then(response => response.json())
-    // .then(data => {
-    //     console.log('TeaString-newList:', data)
-    //     actualize(data);
-    // })
-    // .catch(error => {
-    //     console.log('TeaString-newList-error:', error);
-    // });
 
     return(
         <div className='teaString'>

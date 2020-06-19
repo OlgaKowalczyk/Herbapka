@@ -7,7 +7,8 @@ const TeaList = () => {
 
     const [teaList, setTeaList] = useState([]);
     const [sortingValue, setSortingValue] = useState('date');
-    // const numberOfTeas = teaList.length;
+    const [renderValue, setRenderValue] = useState(0);
+   
   
     useEffect(() => {
         fetch(TEA_ROUTE)
@@ -19,7 +20,7 @@ const TeaList = () => {
             .catch(error => {
                 console.log('TeaList-error:', error);
             });
-    }, [sortingValue]);
+    }, [sortingValue, renderValue]);
 
     const handleSort = (e) => {
         setSortingValue(e.target.value);
@@ -37,18 +38,10 @@ const TeaList = () => {
         return 0;
       }
     
-    // const handleActualize = () => {
-    //     fetch(TEA_ROUTE)
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             console.log('TeaList-data:', data);
-    //             setTeaList(data);
-    //         })
-    //         .catch(error => {
-    //             console.log('TeaList-error:', error);
-    //         });
-    // }
-
+    const handleRenderValue = () => {
+        setRenderValue( renderValue + 1);
+    } 
+    
     return(
         <div className='container'>
             <div className='teaString_sort'>
@@ -71,7 +64,7 @@ const TeaList = () => {
                     {(teaList.sort(compare)).map(tea => {
                         return (
                             <li key={tea.id}> 
-                                <TeaString name={tea.name} country={tea.country} date={tea.date} id={tea.id}/> 
+                                <TeaString name={tea.name} country={tea.country} date={tea.date} id={tea.id} renderValue={handleRenderValue}/> 
                             </li>
                         )
                     })}

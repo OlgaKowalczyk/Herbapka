@@ -7,6 +7,8 @@ import ImageUpload from './ImageUpload';
 // import 'react-datepicker/dist/react-datepicker.css';
 // import DatePicker from 'react-date-picker'
 
+let currentDate = new Date();
+let theDate = currentDate.toISOString().substr(0,10);
 
 class TeaForm extends Component {
     
@@ -19,7 +21,7 @@ class TeaForm extends Component {
         taste: '',
         type: '',
         comment: '',
-        date: '',
+        date: theDate,
         // image: '',
     }
 
@@ -28,6 +30,7 @@ class TeaForm extends Component {
             [e.target.name]: e.target.value,
         })
     }
+  
     
     // addPhoto = (e) => {
     //     if (e.target.files[0]) {
@@ -43,35 +46,23 @@ class TeaForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // TODO validation: nazwa
-    
-        fetch(TEA_ROUTE, {
-            method: "POST",
-            body: JSON.stringify(this.state),
-            headers: {
-                "Content-Type": "application/json"
-            }
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('TeaForm-posted:', data);
-            })
-            .catch(error => {
-                console.log('TeaForm-post-error', error);
-            })
-        this.props.history.push("/teaList");
-    }
-
-    // setRedirect = () => {
-    //     this.setState({
-    //       redirect: true
-    //     })
-    //   }
-    //   renderRedirect = () => {
-    //     if (this.state.redirect) {
-    //       return <Redirect to='/teaList' />
-    //     }
-    //   }
+   
+            fetch(TEA_ROUTE, {
+              method: "POST",
+              body: JSON.stringify(this.state),
+              headers: {
+                  "Content-Type": "application/json"
+              }
+              })
+              .then(response => response.json())
+              .then(data => {
+                  console.log('TeaForm-posted:', data);
+              })
+              .catch(error => {
+                  console.log('TeaForm-post-error', error);
+              })
+          this.props.history.push("/teaList");
+        }  
 
     render(){ 
      
@@ -82,7 +73,7 @@ class TeaForm extends Component {
             <div className='container'>
                 <div className='form_box'>
                     <form onSubmit={this.handleSubmit}>
-                        {/* <label>
+                        {/* <label className='form_label'>
                             Nazwa:
                         </label> */}
                         <input 
@@ -91,6 +82,8 @@ class TeaForm extends Component {
                             value={name} 
                             onChange={this.handleChange}
                             placeholder='Nazwa:'
+                            required
+                            
                         />
                         <select 
                             name='country' 
@@ -131,16 +124,11 @@ class TeaForm extends Component {
                         <input 
                             type='date'    
                             name='date' 
-                            value={date} 
-                            onChange={this.handleChange}
                             className='form_date'
-                            // placeholder= {new Date};
+                            defaultValue={theDate}
+                            onChange={this.handleChange}
                         />
-                            {/* <DatePicker
-                                name = 'date'
-                                value={date}
-                                onChange={this.handleChange}
-                            /> */} 
+                      
                         <br/>
                         {/* <label>
                             Kraj pochodzenia:
@@ -203,7 +191,7 @@ class TeaForm extends Component {
                             placeholder='Uwagi:'
                         />
                         <br/>
-                        <ImageUpload />
+                        {/* <ImageUpload /> */}
                         <br/>
                         <button type='submit' className='form_btn save-btn' onClick={this.handleUpload}>
                             Zapisz
