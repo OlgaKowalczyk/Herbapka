@@ -19,12 +19,16 @@
       --contrast-color-faded:#4422206e;
       --main-color-dark: #809848;
       --main-color:  #b0ca87;
-      --font-color: #b5dead;
+      --font-color:#c7e09d;
+  }
+  *::selection {
+    background: var(--main-color-dark);
   }
   html {
     font-size: 62.5%;
     box-sizing: border-box;
     background-color: var(--contrast-color-dark);
+    overflow-y: hidden;
   }
 
   .container {
@@ -47,7 +51,7 @@
     width: 75%;
     min-height: 75vh;
     margin: 0 auto;
-    background-color: var(--font-color);
+    background-color: var(--main-color);
     font-size: 1.7em;
     display: flex;
     align-items: center;
@@ -55,19 +59,6 @@
     opacity: 88%;
     border-radius: 5px;
   }
-  /* .hidden-container {
-    transition-property: opacity;
-    transition-duration: 1s;
-    transition-timing-function: linear;
-    opacity: 88%;
-  }
-  .hidden-div {
-    transition-property: opacity;
-    transition-duration: 2s;
-    transition-timing-function: linear;
-    transition-delay: 2s;
-    opacity: 88%;
-  } */
 
   .nav_header {
       background-image: url('images/nithin-p-john.jpg');
@@ -98,9 +89,9 @@
     right: 60px;
     top: 15px;
   }
-  .logo-image:hover {
+  /* .logo-image:hover {
     border: 2px solid var(--font-color);
-  }
+  } */
   .nav_ul {
     display: flex;
     align-items: center;
@@ -130,7 +121,7 @@
     font-size: 1.2em;
     height: 50%;
     width:80%;
-    background-color: var(--font-color);
+    background-color: var(--main-color);
     margin: 0 auto;
     padding: 1.5em;
     text-indent: 2em;
@@ -143,17 +134,17 @@
     font-style: italic;
 }
 
-
 .teaString_box {
     width: 100%;
-    height: 90%;
-    margin: 75px 10px 35px 55px;
+    height: 80%;
+    margin: 15px 10px 35px 0px;
     background-color: var(--main-color);
 }
 .teaString_sort {
     font-size: 0.7em;
     color: var(--contrast-color);
-    position: absolute;
+    position: -webkit-sticky;
+    position: sticky;
     left: 0%;
     bottom: 90%
 }
@@ -170,9 +161,10 @@
     height: 8%;
     border-radius: 1%;
     margin: 10px;
-    padding: 1px; 
+    margin-left: 0;
     background-color: var(--main-color-dark);
     opacity: 100%;
+    padding: 0;
 }
 /* .teaString:before{
     color: rgb(228, 35, 99);
@@ -215,7 +207,6 @@
 .teaString_btn, .tea_btn{
     display: inline-block;
     background-color: var(--contrast-color);
-    color: var(--font-color);
     border: none;
     width: 45px;
     height: 45px;
@@ -224,6 +215,7 @@
 }
 .teaString_btn:hover {
     background-color: var(--contrast-color-dark);
+    cursor: pointer;
 }
 .btn-edit{
     background-image: url(images/gear.png);
@@ -247,8 +239,8 @@
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    padding: 20px 50px 0 50px;
-    overflow: auto;
+    padding: 0px 50px 0 50px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,6 +256,7 @@ select {
     letter-spacing: 2px;
     margin-left: 13px;
 }
+
 
 input, textarea {
     background-color: var(--main-color-dark);
@@ -285,9 +278,7 @@ input, textarea {
 input::placeholder, textarea::placeholder{
     color: var(--contrast-color-dark);
 }
-/* input:focus, textarea:focus {
-    box-shadow: 2px 2px var(--main-color-dark);
-} */
+
 *:focus {
     outline: auto;    
     outline-style: auto;
@@ -309,6 +300,16 @@ textarea {
     width: 18%;
     float: right;
 }
+.form_date::-webkit-inner-spin-button { 
+    display: none; 
+}
+.form_date::-webkit-calendar-picker-indicator { 
+    background: var(--main-color-dark) 
+}
+.form_date::-webkit-clear-button { 
+    -webkit-appearance: none;
+  }
+  
 .form_btn {
     background-color: var(--main-color);
     font-family: inherit;
@@ -320,17 +321,35 @@ textarea {
     border: none;
     letter-spacing: 2px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .save-btn {
     float: right;
-    margin-top: 20px;
+    margin-top: 90px;
     font-weight: bold;
     background-color: var(--contrast-color);
     color: var(--font-color);
 }
+
+.inputfile {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
 .addPhoto-btn {
     float: left;
     margin-top: 10px;
+    font-weight: bold;
+    background-color: var(--contrast-color);
+    color: var(--font-color);
+}
+.label-btn {
+    text-align: center;
+    margin-right: 10px;
 }
 label {
     color: var(--contrast-color-dark);
@@ -350,8 +369,42 @@ label {
     box-sizing: border-box;
     width: 75%;
 }
+.learn_menu-box{
+width: 100%;
+justify-content: center;
+background-color: var(--main-color);
+}
+
+.learn_menu{
+    width: auto;
+    list-style: none;
+    background-color: var(--contrast-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5em;    
+}
+.learn_menu li {
+    width: 100%;
+    background-color: var(--contrast-color);
+    border-bottom: 1px solid var(--main-color);
+    text-align: center;
+}
+.learn_menu-link {
+    text-decoration: none;
+    color: var(--main-color);
+    line-height: 40px;
+}
+.learn_menu li:hover {
+    background-color: var(--contrast-color-dark);
+}
+
 .learnAbout {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
+}
+.learn_brewing-tips {
+    font-weight: 400;
+    margin-right: 4px;
+    line-height: 60px;
 }
 hr {
     border: none;
@@ -359,10 +412,11 @@ hr {
     margin-top: 100px;
 }
 .learn_title-box {
-    background-color: var(--main-color-dark);
+    background-color: var(--contrast-color);
+    color: var(--font-color);
     border-radius: 5px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .container::-webkit-scrollbar {
@@ -399,9 +453,7 @@ table {
     height: 100%;
     color: var(--contrast-color-dark);
 }
-/* .tableScroll {
-    overflow-y: scroll;
-} */
+
 .table-box {
     width: 95%;
     height: 80%;
@@ -416,9 +468,6 @@ thead {
     text-transform: uppercase;
     font-size: 1.5em;
 }
-/* tr {
-    max-height: 40px;
-} */
 th {
     width: 30%;
     text-transform: uppercase;
@@ -429,14 +478,10 @@ th {
     background-color: var(--contrast-color);
     color: var(--font-color);
 }
-
 td {
     width: 70%;
-    /* max-height: 40px; */
     padding: 10px;
-    background-color: var(--font-color);
-    /* overflow-y:auto;
-    scrollbar-color: var(--main-color-dark);  */
+    background-color: var(--font-color);  
 }
 .container-tea{
     width: 75%;
@@ -467,4 +512,15 @@ td {
     position: absolute;
     right: 115px;
     bottom: 22px;
+}
+.iconsInfo {
+    font-size: 0.3em;
+    text-decoration: none;
+}
+.insteadOfPhoto {
+    height: 20px;
+    width: 20px;
+    background-color: var(--contrast-color);
+    display: inline-block;
+    margin-right: 10px;
 }

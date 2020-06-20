@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { TEA_ROUTE } from './apiConstants';
 import ImageUpload from './ImageUpload';
-// import { Redirect } from 'react-router-dom';
 // import DayPicker from 'react-day-picker';
-// import 'react-day-picker/lib/style.css';
-// import 'react-datepicker/dist/react-datepicker.css';
-// import DatePicker from 'react-date-picker'
 
 let currentDate = new Date();
 let theDate = currentDate.toISOString().substr(0,10);
@@ -22,7 +18,6 @@ class TeaForm extends Component {
         type: '',
         comment: '',
         date: theDate,
-        // image: '',
     }
 
     handleChange = (e) => {
@@ -66,7 +61,7 @@ class TeaForm extends Component {
 
     render(){ 
      
-        const {name, country, info, brewing, smell, taste, type, comment, date, image} = this.state;
+        const {name, country, info, brewing, smell, taste, type, comment} = this.state;
 
         return (    
             <>
@@ -128,8 +123,6 @@ class TeaForm extends Component {
                             defaultValue={theDate}
                             onChange={this.handleChange}
                         />
-                      
-                        <br/>
                         {/* <label>
                             Kraj pochodzenia:
                         </label> */}
@@ -191,7 +184,7 @@ class TeaForm extends Component {
                             placeholder='Uwagi:'
                         />
                         <br/>
-                        {/* <ImageUpload /> */}
+                        <ImageUpload/>
                         <br/>
                         <button type='submit' className='form_btn save-btn' onClick={this.handleUpload}>
                             Zapisz

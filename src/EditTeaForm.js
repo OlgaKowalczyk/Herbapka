@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { TEA_ROUTE} from './apiConstants';
-// import DayPicker from 'react-day-picker';
-// import 'react-day-picker/lib/style.css';
+
+
+let currentDate = new Date();
+let theDate = currentDate.toISOString().substr(0,10);
 
 class EditTeaForm extends Component {
  
@@ -14,7 +16,7 @@ class EditTeaForm extends Component {
         taste: '',
         type: '',
         comment: '',
-        date: '',
+        date: theDate,
     }
            
     componentDidMount(){
@@ -73,7 +75,7 @@ class EditTeaForm extends Component {
     }
     render(){ 
      
-        const {name, country, info, brewing, smell, taste, type, comment, date} = this.state;
+        const {name, country, info, brewing, smell, taste, type, comment} = this.state;
     
         return (    
 
@@ -122,9 +124,9 @@ class EditTeaForm extends Component {
                         <input 
                             type='date'    
                             name='date' 
-                            value={date} 
-                            onChange={this.handleChange}
                             className='form_date'
+                            defaultValue={theDate}
+                            onChange={this.handleChange}
                         />
                         <textarea 
                             type='text' 

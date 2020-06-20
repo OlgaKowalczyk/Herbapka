@@ -14,7 +14,8 @@ class Tea extends Component {
         type: '',
         comment: '',
         date: '',
-        id: this.props.match.params.id
+        id: this.props.match.params.id,
+        images: [],
     }
     
     componentDidMount(){
@@ -41,11 +42,10 @@ class Tea extends Component {
                 console.log('Tea-error', error);
             });
         };
-      
 
     render(){
         
-        const {name, country, info, brewing, smell, taste, type, comment, id} = this.state;
+        const {name, country, info, brewing, smell, taste, type, comment, id, images} = this.state;
         const handleDelete = (e) => {
                     const id = this.props.match.params.id;
                     if (window.confirm('Na pewno chcesz usunąć ten wpis?')){
@@ -58,11 +58,11 @@ class Tea extends Component {
                         .catch(error => {
                             console.log('error', error);
                         });
+                    this.props.history.push("/teaList");
                     } else {
                         return null;
                     }
         }
-
         return(
             <div className='container-tea'>
                 <div className='table-box'>
@@ -72,7 +72,6 @@ class Tea extends Component {
                                 <th className='tea_name' colSpan='2'>{name}</th>
                             </tr>
                         </thead>
-                        <div className='tableScroll'>
                             <tbody>
                                 <tr>
                                     <th>
@@ -135,11 +134,19 @@ class Tea extends Component {
                                         Zdjęcia:
                                     </th>
                                     <td>
-                                        foto foto foto
+                                        <div className='insteadOfPhoto'></div>
+                                        <div className='insteadOfPhoto'></div>
+                                        <div className='insteadOfPhoto'></div>
+                                        {/* <div className="tea_photo-box">
+                                            {images.map(image => {
+                                                return(
+                                                    <img></img>
+                                                )}
+                                            )}
+                                        </div> */}
                                     </td>
                                 </tr>                 
                             </tbody>
-                        </div>
                     </table>
                 </div>
                 <div className='tea_btns'>

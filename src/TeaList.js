@@ -30,10 +30,10 @@ const TeaList = () => {
     function compare(a, b) {
 
         if (a[sortingValue] < b[sortingValue]){
-          return -1;
+          return 1;
         }
         if (a[sortingValue] > b[sortingValue]){
-          return 1;
+          return -1;
         }
         return 0;
       }
