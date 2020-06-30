@@ -64,7 +64,7 @@ const TeaList = () => {
                     {(teaList.sort(compare)).map(tea => {
                         return (
                             <li key={tea.id}> 
-                                <TeaString name={tea.name} country={tea.country} date={tea.date} id={tea.id} renderingValue={handleRenderingValue}/> 
+                                <TeaString name={tea.name} country={tea.country} date={tea.date} id={tea.id} type={tea.type} renderingValue={handleRenderingValue}/> 
                             </li>
                         )
                     })}

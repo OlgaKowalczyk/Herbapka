@@ -36,6 +36,7 @@ class EditTeaForm extends Component {
                     taste: data.taste,
                     aroma: data.aroma,
                     comment: data.comment,
+                    type: data.type,
                 })
             })
             .catch(error => {
@@ -115,8 +116,8 @@ class EditTeaForm extends Component {
                                 <option value='czarna'>Czarna</option>
                                 <option value='zielona'>Zielona</option>
                                 <option value='biała'>Biała</option>
-                                <option value='pu-erh shu'>Shu</option>
-                                <option value='pu-erh sheng'>Sheng</option>
+                                <option value='shu'>Shu</option>
+                                <option value='sheng'>Sheng</option>
                                 <option value='oolong'>Oolong</option>
                                 <option value='żółta'>Żółta</option>
                                 <option value='inna'>Inna</option>

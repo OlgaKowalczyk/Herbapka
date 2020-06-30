@@ -1,9 +1,10 @@
 import React from 'react';
 import { TEA_ROUTE }  from './apiConstants';
 import { Link } from 'react-router-dom';
+import LeafIcon from './LeafIcon'
 
 
-const TeaString = ({name, country, date, id, renderingValue}) => {
+const TeaString = ({name, country, date, id, type, renderingValue}) => {
 
     console.log('TeaString-id:', id)
 
@@ -24,11 +25,11 @@ const TeaString = ({name, country, date, id, renderingValue}) => {
             return null;
         }
     }
-
     return(
         <div className='teaString'>
             <div className='teaString_link-div'>
                     <div className='teaString_link-innerDiv'>
+                        <LeafIcon type={type} />
                         <Link className='teaString_link' to={`/tea/${id}`}>
                             <p className='teaString_name'>{name}</p> 
                             <div className="teaString_info">

@@ -34,7 +34,7 @@
       "type": "inna",
       "comment": "orzeźwiająca, pyszna :>",
       "id": 3,
-      "date": "2020-06-20"
+      "date": "2020-06-21"
     },
     {
       "name": "Sanxia Bi Luo Chun 2020",
@@ -59,6 +59,42 @@
       "comment": "długo utrzymujący się, ewoluujący posmak",
       "date": "2020-02-16",
       "id": 6
+    },
+    {
+      "name": "mmm",
+      "country": "",
+      "info": "",
+      "brewing": "",
+      "smell": "",
+      "taste": "",
+      "type": "sheng",
+      "comment": "",
+      "date": "2020-06-21",
+      "id": 7
+    },
+    {
+      "name": "mmmmmm",
+      "country": "",
+      "info": "",
+      "brewing": "",
+      "smell": "",
+      "taste": "",
+      "type": "shu",
+      "comment": "",
+      "date": "2020-06-21",
+      "id": 8
+    },
+    {
+      "name": "mmmmm",
+      "country": "",
+      "info": "",
+      "brewing": "",
+      "smell": "",
+      "taste": "",
+      "type": "czarna",
+      "comment": "",
+      "date": "2020-06-21",
+      "id": 9
     }
   ]
 }
